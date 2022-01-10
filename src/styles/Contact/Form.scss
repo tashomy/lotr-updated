@@ -1,0 +1,48 @@
+.form {
+  font-family: myFont3 !important;
+  color: $lightColor;
+  input {
+    background-color: transparent;
+    padding: 5px !important;
+    color: $lightColor !important;
+    margin: 5px 0 !important;
+
+    &:focus {
+      outline: none !important;
+      outline-color: transparent !important;
+    }
+  }
+
+  textarea {
+    background-color: transparent;
+    padding: 5px !important;
+    color: $lightColor !important;
+    margin: 5px 0 !important;
+    resize: none;
+  }
+
+  button {
+    padding: 5px !important;
+    background-color: transparent;
+    color: $lightColor;
+    display: block;
+    margin: auto !important;
+    width: 100%;
+
+    &:hover {
+      background-color: rgba(255, 194, 102, 0.192);
+      color: #fff;
+    }
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+    background-color: transparent !important;
+  }
+
+  .invalid {
+    border: 5px solid red !important;
+    background-color: salmon !important;
+    color: #fff;
+  }
+}

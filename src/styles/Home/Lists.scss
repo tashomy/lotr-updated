@@ -1,0 +1,15 @@
+@import "../Variables.scss";
+#lists {
+  height: 100%;
+  background-color: $lightBackColor;
+
+  h2 {
+    $fontSize: 1.8rem;
+    @include mainHeading($darkColor, $fontSize);
+  }
+  @media only screen and (max-width: 767px) {
+    height: 100%;
+    background-color: $lightBackColor;
+    padding-bottom: 10px;
+  }
+}

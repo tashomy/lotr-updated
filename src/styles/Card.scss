@@ -1,0 +1,25 @@
+@import "./Variables.scss";
+.card {
+  padding: 5px;
+  border: none !important;
+  background-color: #64626270 !important;
+  margin: 5px 0;
+  img {
+    width: 100%;
+    padding: 5px;
+    height: 200px;
+    @media only screen and(max-width: 767px) {
+      width: 50%;
+      margin: auto;
+    }
+  }
+  h3 {
+    $fontSize: 1.2rem;
+    @include mainHeading($darkColor, $fontSize);
+  }
+  p {
+    color: $lightColor;
+    font-family: myFont3;
+    font-size: 0.8rem;
+  }
+}

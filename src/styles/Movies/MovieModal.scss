@@ -1,0 +1,54 @@
+@import "../Variables.scss";
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50 !important;
+  background-color: rgba($color: #000000, $alpha: 0.75);
+}
+
+.modale {
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 10%;
+  height: 100%;
+  width: 80%;
+  z-index: 100 !important;
+  overflow: hidden;
+  font-family: myFont3;
+  color: $accentColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  button {
+    background-color: $lightBackColor;
+    color: $darkColor;
+    width: 100%;
+    border: none !important;
+    &:hover {
+      background-color: $accentColor;
+      color: $darkColor;
+    }
+  }
+
+  input {
+    background-color: transparent;
+    padding: 5px !important;
+
+    color: $lightColor !important;
+    margin: 5px 5px !important;
+
+    border: 1px solid $lightColor;
+
+    &:focus {
+      outline: none !important;
+      outline-color: transparent !important;
+    }
+  }
+}

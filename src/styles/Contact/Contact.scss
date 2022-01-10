@@ -1,0 +1,7 @@
+@import "../Variables.scss";
+
+$showcaseUrl: "../../images/contact.jpg";
+$height: 100vh;
+.contact {
+  @include showcaseWrap($showcaseUrl, $height);
+}

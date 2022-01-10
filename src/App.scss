@@ -1,0 +1,21 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "./styles/Header.scss";
+@import "./styles/Home/Showcase.scss";
+@import "./styles/Home/Lists.scss";
+@import "./styles/Contact/Contact.scss";
+@import "./styles/Contact/Form.scss";
+@import "./styles/Movies/Movies.scss";
+@import "./styles/Movies/MoviesShowcase.scss";
+@import "./styles/Movies/MovieModal.scss";
+@import "./styles/Movies/Quote.scss";
+@import "./styles/Card.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  a {
+    text-decoration: none !important;
+  }
+}
