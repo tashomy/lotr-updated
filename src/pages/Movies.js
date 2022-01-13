@@ -4,6 +4,10 @@ import MoviesShowcase from "../components/Movies/MoviesShowcase";
 
 const Movies = (props) => {
   const movies = props.movies;
+
+  if (props.loading) {
+    return <p>Loading...</p>;
+  }
   return (
     <>
       <Container fluid className="movies">

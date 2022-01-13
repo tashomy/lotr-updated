@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./pages/Home";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Container, Alert } from "react-bootstrap";
 import Contact from "./pages/Contact";
 import Movies from "./pages/Movies";
 import useHttp from "./hooks/useHttp";
@@ -26,6 +25,18 @@ function App() {
   const { isLoading, error, getData } = useHttp();
 
   useEffect(() => {
+    const transformBooks = (dataObj, total) => {
+      const loadedBooks = [];
+      for (const key in dataObj) {
+        loadedBooks.push({
+          id: dataObj[key]._id,
+          name: dataObj[key].name,
+        });
+      }
+      setBooks(loadedBooks);
+      setTotalBooks(total);
+    };
+
     const transformMovies = (dataObj, total) => {
       const loadedMovies = [];
 
@@ -45,26 +56,14 @@ function App() {
       setMovies(loadedMovies);
     };
 
-    const transformBooks = (dataObj, total) => {
-      const loadedBooks = [];
-      for (const key in dataObj) {
-        loadedBooks.push({
-          id: dataObj[key]._id,
-          name: dataObj[key].name,
-        });
-      }
-      setBooks(loadedBooks);
-      setTotalBooks(total);
-    };
-
     getData(movieConfigData, transformMovies);
     getData(bookConfigData, transformBooks);
   }, [getData]);
 
-  console.log(movies, totalMovies, books, totalBooks);
+  console.log(movies, totalMovies, books, totalBooks, isLoading);
 
   if (isLoading) {
-    return <Container className="bg-dark text-center">Loading...</Container>;
+    return <p>Loading App</p>;
   }
 
   return (
@@ -79,6 +78,7 @@ function App() {
                 movies={movies}
                 moviesTotal={totalMovies}
                 booksTotal={totalBooks}
+                loading={isLoading}
               />
             }
           ></Route>
@@ -86,7 +86,7 @@ function App() {
           <Route
             exact
             path="/movies"
-            element={<Movies movies={movies} />}
+            element={<Movies movies={movies} loading={isLoading} />}
           ></Route>
         </Routes>
       </Router>

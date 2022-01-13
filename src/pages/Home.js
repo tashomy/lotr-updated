@@ -9,6 +9,12 @@ const Home = (props) => {
   const movies = props.movies;
   const totalM = props.moviesTotal;
   const totalB = props.booksTotal;
+  const loading = props.loading;
+
+  if (props.loading) {
+    console.log("LOADING HOME");
+    return <p>Loading Home</p>;
+  }
 
   return (
     <>
@@ -16,7 +22,7 @@ const Home = (props) => {
         <Header />
         <Showcase movies={totalM} books={totalB} />
       </Container>
-      <Lists movies={movies} />
+      <Lists movies={movies} loading={loading} />
     </>
   );
 };

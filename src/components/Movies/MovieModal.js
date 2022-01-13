@@ -4,7 +4,6 @@ import Quote from "./Quote";
 
 const MovieModal = (props) => {
   const character = props.characters.docs;
-  let quotesMovie = [];
   const movieID = props.movieId;
   const [quote, setQuote] = useState();
   const [input, setInput] = useState("");
@@ -46,7 +45,7 @@ const MovieModal = (props) => {
   }, []);
 
   if (quote === undefined) {
-    return <h1>Loading je li to taj</h1>;
+    return <h1>Loading quotes</h1>;
   }
 
   const inputHandler = (event) => {
