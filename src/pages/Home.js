@@ -6,15 +6,17 @@ import { useEffect, useState } from "react";
 import Lists from "../components/Home/Lists";
 
 const Home = (props) => {
-  const arr = props.movies.docs;
+  const movies = props.movies;
+  const totalM = props.moviesTotal;
+  const totalB = props.booksTotal;
 
   return (
     <>
       <Container fluid className="home">
         <Header />
-        <Showcase movies={props.movies.total} books={props.books.total} />
+        <Showcase movies={totalM} books={totalB} />
       </Container>
-      <Lists movies={props.movies.docs} />
+      <Lists movies={movies} />
     </>
   );
 };

@@ -83,7 +83,7 @@ const MoviesShowcase = (props) => {
       {modal && (
         <MovieModal
           title={props.movies[modalId].name}
-          movieId={props.movies[modalId]._id}
+          movieId={props.movies[modalId].id}
           details={`Runtime: ${props.movies[modalId].runtimeInMinutes}, score: ${props.movies[modalId].rottenTomatoesScore}`}
           onConfirm={modalHandler}
           quotes={quote}

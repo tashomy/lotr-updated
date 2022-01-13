@@ -46,7 +46,7 @@ const MovieModal = (props) => {
   }, []);
 
   if (quote === undefined) {
-    return <h1>Loading</h1>;
+    return <h1>Loading je li to taj</h1>;
   }
 
   const inputHandler = (event) => {

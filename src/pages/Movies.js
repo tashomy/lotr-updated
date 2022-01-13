@@ -3,8 +3,7 @@ import Header from "../components/Header/Header";
 import MoviesShowcase from "../components/Movies/MoviesShowcase";
 
 const Movies = (props) => {
-  const movies = props.movies.docs;
-  console.log(movies);
+  const movies = props.movies;
   return (
     <>
       <Container fluid className="movies">
